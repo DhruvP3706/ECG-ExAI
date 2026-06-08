@@ -1,0 +1,21 @@
+# ─── Core ML ────────────────────────────────────────────────────────────────
+torch>=2.0.0          # required for torch.compile() [OPT-3]
+                      # install the CUDA variant from https://pytorch.org/get-started
+                      # e.g.: pip install torch --index-url https://download.pytorch.org/whl/cu121
+
+# ─── Explainability ─────────────────────────────────────────────────────────
+shap>=0.44.0          # GradientExplainer; 0.44+ fixes ranked_outputs shape contract
+
+# ─── Signal processing ───────────────────────────────────────────────────────
+scipy>=1.11.0         # sosfiltfilt, butter (SOS form) [OPT-1]
+numpy>=1.24.0
+
+# ─── Data I/O ────────────────────────────────────────────────────────────────
+# scipy.io.loadmat is part of scipy (already listed above)
+
+# ─── Plotting ────────────────────────────────────────────────────────────────
+matplotlib>=3.7.0
+
+# ─── Optional: faster MATLAB file reading ────────────────────────────────────
+# Uncomment if your .mat files are v7.3 HDF5 format (loadmat will fail on these)
+# mat73>=0.62
